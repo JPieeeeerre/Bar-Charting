@@ -16,7 +16,7 @@ for i in list_unique_vals:
         list_repeats.append(data["column_name"].value_counts()[i])
 
 # Assigns the list of unique items and their number of repeats as "keys" and "values"
-keys = list_unique
+keys = list_unique_vals
 values = list_repeats
 
 # Sets the figure specifications:

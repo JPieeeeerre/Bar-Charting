@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 data = pd.read_csv("Data.csv")
 
 # Gets the unique values in the data:
-unique_values = entries.Entries.unique()
+unique_values = data.Column_name.unique()
 list_unique_vals = []
 for i in unique_values:
         list_unique_vals.append(i)
@@ -13,7 +13,7 @@ for i in unique_values:
 # Counts the iterations of every unique data point:
 list_repeats = []
 for i in list_unique_vals:
-        list_repeats.append(data["Column"].value_counts()[i])
+        list_repeats.append(data["column_name"].value_counts()[i])
 
 # Assigns the list of unique items and their number of repeats as "keys" and "values"
 keys = list_unique

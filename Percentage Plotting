@@ -1,0 +1,24 @@
+keys = list_unique
+values = list_repeats
+
+kdf = pd.DataFrame({"Keys": keys, "Values":values})
+
+num_entries = len(entries)
+max_ = list_repeats[0]
+
+fig = plt.figure(figsize = (10, 5), dpi=400)
+
+# creating the bar plot
+plt.bar(keys, values, color ='yellow',
+        width = 0.4)
+
+plt.yticks(np.arange(0,+1,25))
+plt.xticks(np.arange(0,14,1))
+
+for i in kdf.index:
+        plt.text(kdf["Keys"][i]-0.3, kdf["Values"][i], str(round((kdf["Values"][i]/num_entries)*100, 2))+"%", size=7)
+
+plt.xlabel("Amount of entries per trading session")
+plt.ylabel("Frequency of trade entries")
+plt.title("NY-RMS Trade Entries")
+plt.show()
